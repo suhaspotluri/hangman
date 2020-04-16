@@ -1,0 +1,27 @@
+
+table,td,tr,th{
+
+    width:100%;
+    text-align:center;
+    border: 1px solid black;
+
+}
+p{
+    text-align:center;
+    font-size:4vh;
+}
+th{
+    font-size:3vh;
+    padding:1vw;
+}
+td{
+    font-size:2vw;
+}
+@media (max-device-width: 812px) {
+.parent{
+    width:100vw;
+    height:100vh;
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:center;
+}

@@ -1,0 +1,50 @@
+
+{% block content %}
+<head>
+     {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "html5reset.css" %}">
+    <link rel="stylesheet" href="{% static "gamestyle.css" %}">
+</head>
+<div class='parent'>
+   <h1> <a class="hea" href={% url 'hangman:all' %}>Hangman</a></h1>
+    <div class="drawingWin">
+        {% load static %}
+        {% static "hang/man" as baseUrl %}
+        {% if win %}
+        <img class="grid-child" id=fig1 src="{% static "body_stick_figure.png" %}" >
+        {% else %}
+        <img class="grid-child" id=fig1 src="{{baseUrl}}5.png">
+        {%endif%}
+    </div>
+    <div class="guess">
+
+    </div>
+    <div class="letters">
+        {% if win %}
+        <p class='smile'>You Won :)</p>
+        <p>You correctly guessed the word:</p>
+        <p class='wword'> {{word}}</p>
+        {% else %}
+        <p class="loss">You Lost :(</p>
+        <p>The correct word was:</p>
+        <p class='cword'> {{word}}</p>
+        {% endif %}
+
+    </div>
+    <div class='stats'>
+        {% if win %}
+        <p>You only guessed {{wrongNum}} letter(s) wrong</p>
+        {% else %}
+        <p>You guessed {{attempts}} letters and got {{corNum}} letters correct</p>
+        {%endif%}
+        <a href={% url 'hangman:all' %}>Return Home</a>
+        <a href={% url 'hangman:scoreboard' %}>View Leaderboard</a>
+        </div>
+
+</div>
+
+
+
+
+ {% endblock %}

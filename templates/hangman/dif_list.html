@@ -1,0 +1,35 @@
+
+{% block content %}
+<head>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "html5reset.css" %}">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+
+<div class="parent">
+
+ <h1 class="grid-child">Welcome to Hangman</h1>
+ <div class="diff">
+     <h2>Choose difficulty</h2>
+ {% if difficulty_list %}
+ <ul>
+     {% for dif in difficulty_list %}
+     <li>
+          <a href="{% url 'hangman:game' dif.id 0 '-' %}">
+          {{ dif.diffName }} ({{ dif.wordLenMin }} - {{ dif.wordLenMax }}  letters)</a>
+     </li>
+     {% endfor %}
+ </ul>
+   {% endif %}
+   </div>
+   {% load static %}
+   <div class="log">
+       <p class="uname">Logged in as: {{user}}</p>
+   <a class="lg" href="{% url 'logout' %}?next={% url 'hangman:all' %}">Logout</a>
+   <a class="lg" href={% url 'hangman:scoreboard' %}>Leaderboard</a>
+   </div>
+<img class="grid-child" id=fig1 src="{% static "hangman-figure.png" %}">
+<img class="grid-child" id=fig2 src="{% static "body_stick_figure.png" %}">
+   </div>
+ {% endblock %}

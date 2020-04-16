@@ -1,0 +1,237 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Kirang Haerang;
+    font-style: normal;
+}
+h1{
+
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+font-weight: normal;
+font-size:10vw;
+text-align: center;
+color: #0F27FF;
+}
+
+#fig1{
+
+grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        height:100%;
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+#fig2{
+    grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        height:100%;
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+
+}
+.parent {
+    width:100vw;
+    height:100vh;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+.grid-child {
+    margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+
+}
+form{
+    grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+}
+
+
+.submit{
+    font-size:175%;
+    text-align:center;
+    width:100%;
+    height:10%;
+    background:blue;
+    color: #ffe;
+    border: 1px solid #eee;
+    border-radius:50%;
+}
+.submit:hover{
+    background:red;
+}
+
+.space{
+    height:25%;
+}
+
+ul{
+
+    text-align:center;
+    width:100%;
+    height:100%;
+    list-style-type: none;
+    grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+}
+li{
+height:100%;
+    display:inline;
+
+}
+li a {
+    font-size:170%;
+    color: blue;
+    text-align: center;
+    padding:30px;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius:50%;
+    background:yellow;
+}
+li a:hover{
+    font-size:250%;
+}
+li:first-child a{
+    background:green;
+}
+li:last-child a{
+    background:red;
+}
+
+.diff {
+    grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+h2{
+    font-size:250%;
+    text-align:center;
+    grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+}
+.log{
+    display:flex;
+    flex-direction:column;
+    grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    justify-content:center;
+    font-size:200%;
+}
+.lg{
+
+    width:100%;
+    text-decoration: none;
+    color:blue;
+    text-align:center;
+
+}
+.uname{
+    text-align:center;
+
+}
+.lg:hover{
+    font-size:200%;
+}
+.git{
+    color:blue;
+    width:100%;
+    padding:auto;
+    text-decoration: none;
+    text-align:center;
+}
+p{
+    text-align:center;
+    font-size:4vw;
+}
+.dj{
+    grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+}
+
+@media (max-device-width: 812px) {
+.parent{
+    width:100vw;
+    height:100vh;
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:center;
+}
+p{
+    text-align:center;
+    font-size:7vw;
+}
+#fig1, #fig2{
+    display:none;
+}
+.grid-child{
+    width:100%;
+}
+
+.form-group{
+    text-align:center;
+    display:block;
+    width:100%;
+    font-size:7vw;
+}
+
+.controls{
+    width:100%;
+}
+.textinput{
+    font-size:5vw;
+    width:50%;
+    height:auto;
+}
+.gitbut{
+    font-size:5vw;
+    align-self: center;
+    display:flex;
+    text-align:center;
+}
+.submit{
+    font-size:5vw;
+    text-align:center;
+    width:100%;
+    height:10%;
+    background:blue;
+    border:none;
+    border-radius:0%;
+}
+.space{
+    height:10%;
+}
+h1{
+    height:10%;
+}
+}

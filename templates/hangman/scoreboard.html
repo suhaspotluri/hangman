@@ -1,0 +1,69 @@
+
+{% block content %}
+<head>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "html5reset.css" %}">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="stylesheet" href="{% static "Leaderstyle.css" %}">
+</head>
+
+<div class="parent">
+
+ <h1 class="grid-child">Hangman Leaderboard</h1>
+ <div class="diff">
+    <div class="dif1">
+        <p>Easy</p>
+    <table>
+        <thead><tr><th>Player</th><th>Attempts</th><th>Wins</th></tr></thead>
+        <tbody>
+    {% for i in dif1 %}
+    <tr>
+    <td>{{i.user.username}}</td><td>{{i.totalWords}}</td><td>{{i.totalCWords}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+
+   <div class="dif2">
+       <p>Medium</p>
+     <table>
+        <thead><tr><th>Player</th><th>Attempts</th><th>Wins</th></tr></thead>
+        <tbody>
+    {% for i in dif2 %}
+    <tr>
+    <td>{{i.user.username}}</td><td>{{i.totalWords}}</td><td>{{i.totalCWords}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+
+    <div class="dif3">
+        <p>Hard</p>
+        <table>
+        <thead><tr><th>Player</th><th>Attempts</th><th>Wins</th></tr></thead>
+        <tbody>
+    {% for i in dif3 %}
+    <tr>
+    <td>{{i.user.username}}</td><td>{{i.totalWords}}</td><td>{{i.totalCWords}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+
+    </div>
+
+
+   {% load static %}
+   <div class="log">
+       <a class="lg" href={% url 'hangman:all' %}>Return Home</a>
+       <p class="uname">Logged in as: {{user}}</p>
+   <a class="lg" href="{% url 'logout' %}?next={% url 'hangman:all' %}">Logout</a>
+   </div>
+<img class="grid-child" id=fig1 src="{% static "hangman-figure.png" %}">
+<img class="grid-child" id=fig2 src="{% static "body_stick_figure.png" %}">
+   </div>
+ {% endblock %}

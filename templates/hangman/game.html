@@ -1,0 +1,54 @@
+
+{% block content %}
+<head>
+     {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "html5reset.css" %}">
+    <link rel="stylesheet" href="{% static "gamestyle.css" %}">
+</head>
+<div class='parent'>
+   <h1> <a class="hea" href={% url 'hangman:all' %}>Hangman</a></h1>
+    <div class="drawing">
+        {% load static %}
+        {% static "hang/man" as baseUrl %}
+        <img class="grid-child" id=fig1 src="{{baseUrl}}{{wl|length}}.png">
+    </div>
+    <div class="guess">
+        <div class='g1'><p>Hint: {{cat}}</p></div>
+        <div class='g2'>
+        {% for i in word %}
+        {% if i in cl %}
+        <p class="corrW">{{i}}</p>
+        {% else %}
+        <p>_</p>
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    <div class="letters">
+        {% for letter in alph %}
+        {% if letter in cl %}
+        <a class="correct">{{letter}}<a/>
+        {% elif letter in wl %}
+        <a class="wrong" >{{letter}}<a/>
+        {% else %}
+        <a href="{% url 'hangman:game' 0 wordObj letter %}">{{letter}}<a/>
+        {% endif %}
+
+        {% endfor %}
+
+
+
+    </div>
+
+
+</div>
+
+
+
+Word Len:{{wordLen}}
+wk: {{wk}}
+Cl: {{cl}}
+Wl: {{wl}}
+Word: {{word}}
+ {% endblock %}
